@@ -89,7 +89,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   nvm
-  zsh-syntax-highlighting
+  # zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,8 +122,10 @@ source $ZSH/oh-my-zsh.sh
 
 alias py="python3"
 alias caiol="/mnt/c/users/caiol"
+alias projetos="/mnt/c/users/caiol/projetos"
+alias l="ls -lAh"
 
-neofetch
+# neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
