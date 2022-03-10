@@ -94,6 +94,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# this gives suggestions when using commands that are not installed
+source /etc/zsh_command_not_found
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
