@@ -18,8 +18,9 @@ set smartcase
 set encoding=utf-8
 set modelines=0
 set formatoptions=tqn1
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set softtabstop=4
 set cmdheight=1
 set laststatus=2
@@ -31,6 +32,8 @@ set statusline=%1*\ file\ %3*\ %f\ %4*\
 set statusline+=%=\ 
 set statusline+=%3*\ %l\ of\ %L\ %2*\ line\ 
 set scrolloff=8
+set ai
+set si
 nmap <C-S> :w<CR>
 nmap <C-_> :noh<CR>
 nmap <S-Left> v<Left>
