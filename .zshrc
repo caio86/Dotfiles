@@ -5,8 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+autoload -Uz compinit && compinit
+
 typeset -A ZI
-ZI[HOME_DIR]="$HOME/.local/share/zi"
+ZI[HOME_DIR]="${XDG_DATA_HOME:-$HOME/.local/share}/zi"
 
 source <(curl -sL init.zshell.dev); zzinit
 
@@ -24,7 +26,12 @@ zi wait lucid for \
 	OMZP::rust \
 	OMZP::command-not-found
 
+source "$HOME/.profile"
+
 setopt auto_cd
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
