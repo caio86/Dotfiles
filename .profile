@@ -1,12 +1,19 @@
+
+# Define Aliases
+
 alias c="clear"
 alias vim='nvim'
 alias ls='ls --color=auto'
 alias k='kubectl'
 alias h='helm'
 alias sudo='sudo '
+alias config="/usr/bin/git --git-dir=$HOME/bare-dot --work-tree=$HOME"
 
+# Define preferred editor and shell
 export EDITOR="nvim"
 export SHELL="zsh"
+
+# Env Variables
 
 export GOPATH="$HOME/.go"
 export PATH="$HOME/.cargo/bin:$PATH"
