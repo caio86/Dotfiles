@@ -38,4 +38,6 @@ setopt auto_cd
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-eval "$(~/.cargo/bin/rtx activate zsh)"
+if [ -f "$HOME~/.cargo/bin/rtx" ]; then
+  eval "$(~/.cargo/bin/rtx activate zsh)"
+fi
