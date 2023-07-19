@@ -1,7 +1,7 @@
-
 # Define Aliases
 
 alias c="clear"
+alias py="python3"
 alias vim='nvim'
 alias ls='ls --color=auto'
 alias k='kubectl'
