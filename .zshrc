@@ -17,6 +17,7 @@ zi light zsh-users/zsh-completions
 zi light zsh-users/zsh-autosuggestions
 zi light zsh-users/zsh-syntax-highlighting
 zi light ohmyzsh/ohmyzsh
+zi light rupa/z
 
 zi wait lucid for \
 	OMZP::git \
@@ -24,14 +25,17 @@ zi wait lucid for \
 	OMZP::kubectl \
 	OMZP::kubectx \
 	OMZP::rust \
-	OMZP::command-not-found
+	OMZP::command-not-found \
+#  OMZP::asdf
 
 source "$HOME/.profile"
 
 setopt auto_cd
 
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+eval "$(~/.cargo/bin/rtx activate zsh)"
