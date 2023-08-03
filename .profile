@@ -7,7 +7,7 @@ alias ls='ls --color=auto'
 alias k='kubectl'
 alias h='helm'
 alias sudo='sudo '
-alias config="/usr/bin/git --git-dir=$HOME/bare-dot --work-tree=$HOME"
+alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # Define preferred editor and shell
 export EDITOR="nvim"
@@ -21,6 +21,8 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
 export KUBECONFIG="$HOME/.kube/config"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
 
 docker_rm_stopped() {
   docker rm $(docker ps -a -q)
