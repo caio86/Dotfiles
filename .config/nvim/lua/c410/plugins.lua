@@ -25,7 +25,9 @@ local M = {
             { 'L3MON4D3/LuaSnip' },     -- Required
         }
     },
-    { 'lewis6991/gitsigns.nvim' },
+    {
+        'lewis6991/gitsigns.nvim',
+    },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -34,11 +36,22 @@ local M = {
             vim.o.timeoutlen = 300
         end,
         opts = {
-         -- your configuration comes here
-         -- or leave it empty to use the default settings
-         -- refer to the configuration section below
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
         }
-    }
+    },
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons'
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+    },
+    { "lukas-reineke/indent-blankline.nvim" },
+    { "HiPhish/nvim-ts-rainbow2" },
 }
 
 return M
