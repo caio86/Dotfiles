@@ -8,6 +8,7 @@ alias k='kubectl'
 alias h='helm'
 alias sudo='sudo '
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+alias tomb="WAYLAND_DISPLAY= DISPLAY= tomb"
 
 # Define preferred editor and shell
 export EDITOR="nvim"
@@ -25,16 +26,16 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
 
 docker_rm_stopped() {
-  docker rm $(docker ps -a -q)
+	docker rm $(docker ps -a -q)
 }
 
-if ! type open > /dev/null ; then
-  alias open=xdg-open
+if ! type open >/dev/null; then
+	alias open=xdg-open
 fi
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-  gpg-connect-agent /bye >/dev/null 2>&1
+	gpg-connect-agent /bye >/dev/null 2>&1
 fi
 
 alias gpg-unlock="gpg-connect-agent updatestartuptty /bye"
