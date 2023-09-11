@@ -33,6 +33,9 @@ if ! type open >/dev/null; then
 	alias open=xdg-open
 fi
 
+# Sessionizer
+bindkey -s "^f" "tmux-sessionizer\n"
+
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
 	gpg-connect-agent /bye >/dev/null 2>&1
