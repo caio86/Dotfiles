@@ -25,6 +25,7 @@ zi wait lucid for \
 	OMZP::kubectx \
 	OMZP::rust \
 	OMZP::command-not-found \
+  OMZP::git-auto-fetch \
 
 source "$HOME/.profile"
 

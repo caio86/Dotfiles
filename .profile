@@ -29,6 +29,10 @@ docker_rm_stopped() {
 	docker rm $(docker ps -a -q)
 }
 
+docker_stop_running() {
+	docker stop $(docker ps -q)
+}
+
 if ! type open >/dev/null; then
 	alias open=xdg-open
 fi
