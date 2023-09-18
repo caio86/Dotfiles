@@ -2,10 +2,34 @@
 
 alias c="clear"
 alias py="python3"
+
+# Replace commands
+
 alias vim='nvim'
-alias ls='ls --color=auto'
+
+if command -v exa >/dev/null; then
+	alias ls="exa"
+	alias ll="exa -lh"
+	alias lsa="exa -lah"
+	alias l="exa -lah"
+fi
+
+if command -v bat >/dev/null; then
+	alias cat="bat -p"
+fi
+
+alias rg="rg --smart-case"
+
+# alias l='ls -lah'
+# alias ll='ls -lh'
+# alias ls='ls --color=auto'
+# alias lsa='ls -lah'
+
+# K8S
+
 alias k='kubectl'
 alias h='helm'
+
 alias sudo='sudo '
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias tomb="WAYLAND_DISPLAY= DISPLAY= tomb"
@@ -37,8 +61,16 @@ if ! type open >/dev/null; then
 	alias open=xdg-open
 fi
 
-# Sessionizer
+run-tmux-sessionizer() {
+	tmux-sessionizer
+	zle redisplay
+}
+
+zle -N run-tmux-sessionizer
+
+# Tmux
 bindkey -s "^f" "tmux-sessionizer\n"
+# bindkey "^f" run-tmux-sessionizer
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
