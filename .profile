@@ -31,7 +31,7 @@ alias k='kubectl'
 alias h='helm'
 
 alias sudo='sudo '
-alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+alias dot="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tomb="WAYLAND_DISPLAY= DISPLAY= tomb"
 
 # Define preferred editor and shell
