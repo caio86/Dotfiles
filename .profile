@@ -66,10 +66,17 @@ run-tmux-sessionizer() {
 	zle redisplay
 }
 
+run-tmus-navigator() {
+	tmux-navigator
+	zle redisplay
+}
+
 zle -N run-tmux-sessionizer
+zle -N run-tmus-navigator
 
 # Tmux
 bindkey -s "^f" "tmux-sessionizer\n"
+bindkey -s "^t" "tmux-navigator\n"
 # bindkey "^f" run-tmux-sessionizer
 
 # Start the gpg-agent if not already running
