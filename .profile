@@ -2,6 +2,9 @@
 
 alias c="clear"
 alias py="python3"
+alias sudo='sudo '
+alias dot="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias tomb="WAYLAND_DISPLAY= DISPLAY= tomb"
 
 # Replace commands
 
@@ -30,10 +33,6 @@ alias rg="rg --smart-case"
 alias k='kubectl'
 alias h='helm'
 
-alias sudo='sudo '
-alias dot="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-alias tomb="WAYLAND_DISPLAY= DISPLAY= tomb"
-
 # Define preferred editor and shell
 export EDITOR="nvim"
 export SHELL="zsh"
@@ -55,6 +54,15 @@ docker_rm_stopped() {
 
 docker_stop_running() {
 	docker stop $(docker ps -q)
+}
+
+fzfd() {
+	escolhido=$(fd -t d | fzf)
+	if [ -z "$escolhido" ]; then
+		return 0
+	fi
+
+	cd $escolhido
 }
 
 if ! type open >/dev/null; then
