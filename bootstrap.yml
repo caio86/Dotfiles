@@ -1,0 +1,57 @@
+- name: Bootstrap development environment
+  vars:
+    the_user: "{{ ansible_user_id }}"
+  hosts: localhost
+
+  tasks:
+    - name: Create directory ~/.config/nvim
+      file:
+        path: "{{ ansible_env.HOME }}/.config/nvim"
+        state: directory
+
+    - name: Install packages with pacman
+      become: true
+      community.general.pacman:
+        update_cache: true
+        name:
+          - wget
+          - unzip
+          - git
+          - ripgrep
+          - fd
+          - wl-clipboard
+          - tmux
+          - neovim
+          - python-pip
+          - zsh
+          - starship
+          - python-pynvim
+          - npm
+
+        state: present
+
+    - name: npm install global neovim
+      become: true
+      community.general.npm:
+        name: "neovim"
+        global: true
+        state: present
+
+    - name: Clone dotfiles
+      git:
+        repo: https://github.com/caio86/dotfiles
+        dest: "{{ ansible_env.HOME }}/.dotfiles"
+        clone: true
+        bare: true
+
+    - name: Clone nvim config
+      git:
+        repo: https://github.com/caio86/config.nvim
+        dest: "{{ ansible_env.HOME }}/.config/nvim"
+        clone: true
+
+    - name: change user shell to zsh
+      become: true
+      user:
+        name: "{{ the_user }}"
+        shell: "/bin/zsh"
