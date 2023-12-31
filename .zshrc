@@ -19,7 +19,7 @@ command mkdir -p "$ZI[BIN_DIR]"
 ## Clone repo
 compaudit | xargs chown -R "$(whoami)" "$ZI[HOME_DIR]"
 compaudit | xargs chmod -R go-w "$ZI[HOME_DIR]"
-if [[ -z $(ls -A "$ZI[HOME_DIR]") ]]; then
+if [[ -z $(ls -A "$ZI[BIN_DIR]") ]]; then
   command git clone https://github.com/z-shell/zi.git "$ZI[BIN_DIR]"
 fi
 
