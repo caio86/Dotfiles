@@ -56,7 +56,6 @@ source "$HOME/.profile"
 
 setopt auto_cd
 
-eval $(keychain --eval --quiet)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -68,6 +67,10 @@ if command -v rtx &> /dev/null; then
 fi
 if command -v zoxide &> /dev/null; then
 	eval "$(zoxide init zsh)"
+fi
+
+if command -v keychain &> /dev/null; then
+  eval "$(keychain --eval --quiet)"
 fi
 
 eval "$(starship init zsh)"
