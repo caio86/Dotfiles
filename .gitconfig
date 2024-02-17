@@ -4,6 +4,8 @@
 [credential]
         helper = cache --timeout=7200
 [core]
+        autocrlf = false
+        eol = lf
         editor = vim
 [init]
 	defaultBranch = main
